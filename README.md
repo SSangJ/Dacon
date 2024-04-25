@@ -21,3 +21,7 @@ Dacon 참가 대회
 
 ### 5. Dacon_income_prediction
 ### https://github.com/SSangJ/Dacon/tree/main/Dacon_income_prediction
+<br>
+
+### 6. Dacon_code_similarity_detection
+### https://github.com/SSangJ/Dacon/tree/main/Dacon_code_similarity_detection
