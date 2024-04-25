@@ -17,3 +17,7 @@ Dacon 참가 대회
 
 ### 4. Dacon_anomaly_detection
 ### https://github.com/SSangJ/Dacon/tree/main/Dacon_anomaly_detection
+<br>
+
+### 5. Dacon_income_prediction
+### https://github.com/SSangJ/Dacon/tree/main/Dacon_income_prediction
