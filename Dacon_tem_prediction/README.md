@@ -1,24 +1,20 @@
 # 주제
-##### 다양한 개인적 특성을 바탕으로 한 데이터를 활용하여 소득 수준을 예측
-##### 개인 특성 데이터를 활용하여 개인 소득 수준을 예측하는 AI 모델 개발
+##### 서울시의 평균기온을 예측하는 AI 알고리즘 개발
+##### 서울시의 일자별 기상 데이터 분석을 통해 평균기온을 예측하는 AI 모델을 개발
 <br>
 
 # train.csv
-##### ID
-##### AGE
-##### Gender
-##### Education_Status
-##### Race
-##### Hispanic_Origin
-##### Martial_Status
-##### Household_Status
-##### Household_summary
-##### Citizenship
-##### Birth_Country
-##### Birth_Country(Father)
-##### Tax_Status
-##### Income (Target)
-
+##### 일시
+##### 최고기온
+##### 최저기온
+##### 일교차
+##### 강수량
+##### 평균습도
+##### 평균풍속
+##### 일조합
+##### 일사합
+##### 일조율
+##### 평균기온(Target)
 <br>
 
 # 데이터 전처리 및 모델 설명
@@ -27,14 +23,18 @@
 <br>
 
 ## 1.데이터 전처리
-##### 1-1) 대부분의 column이 수많은 변수들을 가지는 categorical features 이므로 label encoding과 target encoding 중 target encoding으로 결정
-##### 1-2) 적은 변수 가짓수를 가지는 categorical feature는 one-hot encoding
-##### 2) Gains와 income의 이상치를 처리해 주기 위해 너무 큰 값은 잘라 주었음
-
+##### 1-1) 일시 컬럼에서 년, 월, 일을 분리하여 새로운 컬럼으로 추가. 이때, 데이터 타입을 정수형으로 지정.
+##### 1-2-1) 결측치 대체 : ffill 메소드를 사용해 최고기온, 최저기온, 일교차, 평균풍속, 일조합 컬럼의 결측치를 이전 값으로 대체
+##### 1-2-2) 결측치 대체 : 일조합을 독립 변수, 일조율을 종속 변수로 하는 선형 회귀 모델을 훈련, 결측치가 있는 일조율을 예측 이후 일교차와 일조합을 독립 변수, 일사합을 종속 변수로 하는 또 다른 선형 회귀 모델을 훈련, 결측치가 있는 일사합을 예측
+##### 1-3) 로그 변환 적용 :  강수량 컬럼이 정규분포의 모양이 아닌 치우친 모양이기 때문에  로그 변환을 적용하여 값의 분포를 조정
+##### 1-4) 스케일링 :  Min-Max 스케일러를 사용하여 특정 컬럼의 데이터 범위를 조정
+##### 1-5) 순환 인코딩 : 월 일은 순환 데이터 이므로 월과 일 데이터에 대해 순환 인코딩을 적용하여 월_sin, 월_cos, 일_sin, 일_cos 컬럼을 추가
+<br>
 
 
 ## 2. 예측 모델
-##### 1-1) xgboost,lightgbm,random_forest,gradient_boosting,catboost 모델 이용
-##### 1-2) optuna를 이용하여 최적의 파라미터를 찾고 위에서 언급한 모델들의 앙상블 진행
-##### 1-3) 100보다 적은 수익을 가지는 column은 거의 없기 때문에 100보다 작으면 0으로 변경
-
+##### 1-1) arima, BiGRU, GRU, LSTM 등 을 시행 해본뒤 GRU로 최종 모델 선정
+##### 1-2) layer수, layer 깊이, batchnormalization, l1,l2, dropout 등을 바꾸어 가며 최적의 파라미터 튜닝 진행
+##### 1-3) EarlyStopping 이용
+##### 1-4) ReduceLROnPlateau learning rate schedluer 사용
+##### 1-5) optimizer adam 
