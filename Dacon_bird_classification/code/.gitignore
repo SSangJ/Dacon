@@ -1,8 +1,10 @@
 ESRGAN/
 SRGAN-Pytorch/
-super-resolution/
 
 test/
 train/
-upscale_train/
+train2.ipynb
+
+
+
 

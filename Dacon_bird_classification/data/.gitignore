@@ -1,5 +1,9 @@
 
 train/
 val/
+train256/
+val256/
+resized_test/
+
 
 
