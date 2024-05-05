@@ -20,7 +20,7 @@
 <br>
 
 
-## 2. 예측 모델(BaselineModel : resnet 50)
+## 2. 예측 모델(swinv2)
 ##### 1) lr=0.001
 ##### 2) StepLR
 
