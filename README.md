@@ -40,3 +40,10 @@ Dacon 참가 대회
 ### 6. Dacon_code_similarity_detection
 ### https://github.com/SSangJ/Dacon/tree/main/Dacon_code_similarity_detection
 ##### 두개의 C++ 코드 쌍이 동일한 문제를 해결하는 코드인지 유사성을 판단하는 AI 알고리즘 개발
+
+<br>
+<br>
+
+### 7. Dacon_bird_classification
+### https://github.com/SSangJ/Dacon/tree/main/Dacon_bird_classification
+##### 저해상도 조류 이미지 분류 AI 알고리즘 개발
