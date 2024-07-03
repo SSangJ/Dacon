@@ -47,3 +47,10 @@
 ### 7. Dacon_bird_classification
 ### https://github.com/SSangJ/Dacon/tree/main/Dacon_bird_classification
 ##### 저해상도 조류 이미지 분류 AI 알고리즘 개발
+
+<br>
+<br>
+
+### 7. Dacon_bird_classification
+### https://github.com/SSangJ/Dacon/tree/main/Dacon_recomendation
+##### 유저 - 기사 조회 데이터를 이용한 추천 시스템 개발
