@@ -51,6 +51,6 @@
 <br>
 <br>
 
-### 7. Dacon_bird_classification
+### 8. Dacon_bird_classification
 ### https://github.com/SSangJ/Dacon/tree/main/Dacon_recomendation
 ##### 유저 - 기사 조회 데이터를 이용한 추천 시스템 개발
